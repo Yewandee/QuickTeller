@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+}
+body {
+  font-family: "Roboto", Verdana, sans-serif;
+  width: 100%;
+}
+.app__content {
+  background-color: #eff2f7;
+  position: relative;
+  padding: 50px 0px 0px 0px;
+  width: calc(100% - 105px);
+  left: 105px;
+  top: 99px;
+  bottom: 30px;
+  overflow-y: auto;
+}
