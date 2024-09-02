@@ -1,0 +1,22 @@
+.send-recieve-money{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+   
+}
+.Send-recieve{
+    background-color: #00597F ;
+    height: 100vh;
+    padding: 40px;
+}
+.Send-recieve button{
+    width: 200px;
+    border: none;
+    margin: 20px;
+}
+.Send-recieve button:hover{
+background-color: #214673;
+}
+.Send-recieve p{
+    color: #ddd;
+}

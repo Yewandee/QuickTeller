@@ -1,34 +1,30 @@
-// import HomeIcon from "@material-ui/icons/Home";
-// import PeopleIcon from "@material-ui/icons/People";
-// import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
-// import ThreeSixtyIcon from "@material-ui/icons/ThreeSixty";
-// import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-
 import { Home } from "@mui/icons-material";
 import { People } from "@mui/icons-material";
 import { PhoneAndroid } from "@mui/icons-material";
 import { ThreeSixty } from "@mui/icons-material";
 import { MoreHoriz } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
-const Sidebar = ({ showDashboard}) => {
+const Sidebar = ({ showDashboard }) => {
   return (
     <nav className="sidebar">
       <div className="sidebar__icon">
-        <span className="active" onClick={() => showDashboard('Card')}>
+        <span className="active" onClick={() => showDashboard("Card")}>
           <Home />
           <p>Dashboard</p>
         </span>
-        <span>
-          
+
+        <span onClick={() => showDashboard("transfer-money")}>
           <People />
           <p>Send/receive money</p>
         </span>
-        <span onClick={() => showDashboard('BuyAirtimeData')}> 
-          <PhoneAndroid/>
+
+        <span onClick={() => showDashboard("BuyAirtimeData")}>
+          <PhoneAndroid />
           <p>buy airtime &amp; mobile data</p>
         </span>
         <span>
-          <ThreeSixty/>
+          <ThreeSixty />
           <p>pay bills</p>
         </span>
         <span>
@@ -38,7 +34,7 @@ const Sidebar = ({ showDashboard}) => {
       </div>
     </nav>
 
-      /* <div className="dropdown">
+    /* <div className="dropdown">
             <button
               className="btn btn-light dropdown-toggle"
               type="button"
