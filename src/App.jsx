@@ -9,6 +9,7 @@ import { useState } from "react";
 import BuyAirtimeData from "./components/BuyAirtimeData";
 import SendReceive from "./components/SendReceive";
 import TransferAccount from "./components/TransferAccount";
+import TransferEcash from "./components/TransferEcash";
 
 function App() {
   const [active, setActive] = useState("Card");
@@ -24,12 +25,13 @@ function App() {
       <main className="app__content" showDashboard={showDashboard}>
         {active === "Card" && <Card />}
         {active === "BuyAirtimeData" && <BuyAirtimeData />}
-        {active === "transfer-money" && <SendReceive showDashboard={showDashboard} />}
+        {active === "transfer-money" && (
+          <SendReceive showDashboard={showDashboard} />
+        )}
         {active === "account" && <TransferAccount />}
-        {/* {active === 'account' && <TransferAccount/>} */}
+        {active === "eCash" && <TransferEcash />}
       </main>
       <div className="footer">OK</div>
-    
     </div>
   );
 }
