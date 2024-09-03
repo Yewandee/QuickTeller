@@ -10,6 +10,7 @@ import BuyAirtimeData from "./components/BuyAirtimeData";
 import SendReceive from "./components/SendReceive";
 import TransferAccount from "./components/TransferAccount";
 import TransferEcash from "./components/TransferEcash";
+import TransferLink from "./components/TransferLink";
 
 function App() {
   const [active, setActive] = useState("Card");
@@ -30,6 +31,7 @@ function App() {
         )}
         {active === "account" && <TransferAccount />}
         {active === "eCash" && <TransferEcash />}
+        {active === "transferlink" && <TransferLink/>}
       </main>
       <div className="footer">OK</div>
     </div>

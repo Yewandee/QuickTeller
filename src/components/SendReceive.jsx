@@ -14,13 +14,13 @@ const SendReceive = ({ showDashboard }) => {
               Transfer to Account
             </button>
             <i> <ChevronRightIcon /></i>
-           
-
 
             <button onClick={() => showDashboard("eCash")}>Transfer to eCash</button><i> <ChevronRightIcon /></i>
+
             <div className="separator-line w-75"></div>
             <p>Recieve Money</p>
-            <button>Transfer to Link</button><i> <ChevronRightIcon /></i>
+
+            <button onClick={() => showDashboard("transferlink")}>Transfer to Link</button><i> <ChevronRightIcon /></i>
           </div>
           <div className="col-md-6"></div>
         </div>

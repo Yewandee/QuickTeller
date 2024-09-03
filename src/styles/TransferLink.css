@@ -1,0 +1,15 @@
+.TransferLink {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.TransferContainer {
+  background-color: #fff;
+  max-width: 900px; 
+  padding: 40px;
+  width: 75%;
+  text-align: center;
+  padding: 40px;
+}
