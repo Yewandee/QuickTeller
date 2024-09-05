@@ -11,6 +11,8 @@ import SendReceive from "./components/SendReceive";
 import TransferAccount from "./components/TransferAccount";
 import TransferEcash from "./components/TransferEcash";
 import TransferLink from "./components/TransferLink";
+import PayBills from "./components/PayBills";
+import PayBillsComponent from "./components/PayBillsComponent";
 
 function App() {
   const [active, setActive] = useState("Card");
@@ -31,7 +33,10 @@ function App() {
         )}
         {active === "account" && <TransferAccount />}
         {active === "eCash" && <TransferEcash />}
-        {active === "transferlink" && <TransferLink/>}
+        {active === "transferlink" && <TransferLink />}
+
+        {active === "PayBills" && <PayBills showDashboard={showDashboard} />}
+        {active === "PayBillsComponent" && <PayBillsComponent showDashboard={showDashboard} />}
       </main>
       <div className="footer">OK</div>
     </div>

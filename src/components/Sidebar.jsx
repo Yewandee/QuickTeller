@@ -23,7 +23,8 @@ const Sidebar = ({ showDashboard }) => {
           <PhoneAndroid />
           <p>buy airtime &amp; mobile data</p>
         </span>
-        <span>
+
+        <span onClick={() => showDashboard("PayBills")}>
           <ThreeSixty />
           <p>pay bills</p>
         </span>

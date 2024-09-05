@@ -1,0 +1,18 @@
+.Paybills-sec{
+    background-color: #00597F ;
+    height: 100vh;
+    padding: 40px;
+    
+}
+.Paybills-sec button{
+    width: 200px;
+    border: none;
+    margin: 20px;
+    background-color: transparent;
+    color: #fff;
+    text-align: left;
+    justify-content: left;
+}
+.Paybills-sec i{
+    color: #fff;
+}
