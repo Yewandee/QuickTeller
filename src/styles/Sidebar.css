@@ -1,10 +1,11 @@
 .sidebar {
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   background-image: linear-gradient(to bottom, #0089c5 0%, #005479 100%);
   background-repeat: repeat-x;
   position: fixed;
   top: 99px;
   height: 100%;
+  padding: 10px;
 }
 .sidebar__icon {
   display: flex;
@@ -23,7 +24,7 @@
   font-weight: 400 !important;
   color: #fff;
 }
-.sidebar__icon > span > p {
+.sidebar__icon > span  {
   font-size: 12px;
   font-weight: 300;
   color: #fff;
@@ -35,8 +36,17 @@
   background-color: #03567c;
   box-shadow: -2px 0px 10px 0px rgba(18, 67, 99, 0.51);
   border-left: 4px solid #fff;
+  width: 100px;
+  padding: 10px 0 10px 0;
+  
+}
+.active:hover{
+  color: #fff;
 }
 .links{
   text-decoration: none;
   color: #fff;
+}
+.links:hover{
+  color: #005479;
 }

@@ -1,18 +1,58 @@
-.Paybills-sec{
-    background-color: #00597F ;
-    height: 100vh;
-    padding: 40px;
-    
+.Paybills-sec {
+  background-color: #00597f;
+  height: 100vh;
+  padding: 40px;
 }
-.Paybills-sec button{
-    width: 200px;
-    border: none;
-    margin: 20px;
-    background-color: transparent;
-    color: #fff;
-    text-align: left;
-    justify-content: left;
+.Paybills-sec button {
+  width: 200px;
+  border: none;
+  margin: 20px;
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+  justify-content: left;
 }
-.Paybills-sec i{
-    color: #fff;
+.Paybills-sec i {
+  color: #fff;
+}
+
+.PayBillsComponent {
+  flex: 2;
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.PayBillsComponent h2 {
+  margin-bottom: 20px;
+}
+
+.PayBillsComponent .containers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.paybills-content {
+  display: flex;
+  margin-bottom: 20px;
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.paybills-images img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.paybills-texts h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.paybills-texts p {
+  margin: 5px 0 0;
 }

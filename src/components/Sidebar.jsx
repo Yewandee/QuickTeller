@@ -1,45 +1,44 @@
-import { Home } from "@mui/icons-material";
-import { People } from "@mui/icons-material";
-import { PhoneAndroid } from "@mui/icons-material";
-import { ThreeSixty } from "@mui/icons-material";
-import { MoreHoriz } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Home, People, PhoneAndroid, ThreeSixty, MoreHoriz } from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
 import "../styles/Sidebar.css";
+
 const Sidebar = () => {
   return (
     <nav className="sidebar">
       <div className="sidebar__icon">
-        <Link to="/" className="links">
-          <span className="active">
+        <span>
+          <NavLink exact to="/" className="links" activeClassName="active">
             <Home />
             <p>Dashboard</p>
-          </span>
-        </Link>
-
-        <span>
-          <Link to="/transfer-money" className="links">
-            <People />
-            <p>Send/receive money</p>
-          </Link>
+          </NavLink>
         </span>
 
-        <Link to="/buy-airtime" className="links">
-          <span>
-            <PhoneAndroid />
-            <p>buy airtime &amp; mobile data</p>
-          </span>
-        </Link>
-
-        <Link to="/paybills" className="links">
-          <span>
-            <ThreeSixty />
-            <p>pay bills</p>
-          </span>
-        </Link>
+        <span>
+          <NavLink to="/transfer-money" className="links" activeClassName="active">
+            <People />
+            <p>Send/receive money</p>
+          </NavLink>
+        </span>
 
         <span>
-          <MoreHoriz />
-          <p>more</p>
+          <NavLink to="/buy-airtime" className="links" activeClassName="active">
+            <PhoneAndroid />
+            <p>buy airtime & data</p>
+          </NavLink>
+        </span>
+
+        <span>
+          <NavLink to="/paybills" className="links" activeClassName="active">
+            <ThreeSixty />
+            <p>pay bills</p>
+          </NavLink>
+        </span>
+
+        <span>
+          <NavLink to="/more" className="links" activeClassName="active">
+            <MoreHoriz />
+            <p>more</p>
+          </NavLink>
         </span>
       </div>
     </nav>
