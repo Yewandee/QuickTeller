@@ -1,59 +1,36 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
-// Import Images
-import Mtn from "../assets/mtn.jpg";
-import Airtel from "../assets/airtel.jpg";
-import Etisalat from "../assets/etisalat.jpg";
-import Glo from "../assets/glo.jpg";
+// Import Paybills Data
+import paybillsDashboard from './PayBillsData.jsx'
 
-const paybillsDashboard = [
-  {
-    dashBoardData: "airtime-and-data",
-    labels: "Airtime and Data",
-    images: [
-      { img: Mtn, hText: "MTN Mobile Data Plan", pText: "VTU Plus" },
-      {
-        img: Etisalat,
-        hText: "9Mobile Data Bundles",
-        pText: "EasyBlaze Data Topup",
-      },
-      { img: Etisalat, hText: "9Mobile PostPaid", pText: "Pay 9Mobile Bills" },
-      { img: Glo, hText: "GLO Data Bundle", pText: "GLO Data Bundle" },
-      { img: "", hText: "", pText: "" },
-      { img: "", hText: "", pText: "" },
-      { img: "", hText: "", pText: "" },
-    ],
-  },
-];
 
-const PayBillsComponent = ({ showDashboard }) => {
-  const currentDashboardData = paybillsDashboard[showDashboard] || [];
+const PayBillsComponent = () => {
+  const { dashboard } = useParams();
 
   const currentDashboard = paybillsDashboard.find(
-    (dashboard) => dashboard.dashBoardData === showDashboard
+    (dashboardItem) => dashboardItem.dashBoardData === dashboard
   );
+
+  if (!currentDashboard) {
+    return <p>Please select a valid dashboard</p>;
+  }
   return (
     <section className="PayBillsComponent">
-      {paybillsDashboard.map((value, index) => (
-        <div className="container">
-          {currentDashboardData.length > 0 ? (
-            <div className="div">
-              <h2>{value.labels}</h2>
-              <div className="paybills-content">
-                <div className="paybills-images">
-                  <img src={value.images} alt="" />
-                </div>
-                <div className="paybills-texts">
-                  <h4>{value.hText}</h4>
-                  <p>{value.pText}</p>
-                </div>
-              </div>
+      <div className="container">
+        <h2>{currentDashboard.labels}</h2>
+        {currentDashboard.images.map((image, index) => (
+          <div className="paybills-content" key={index}>
+            <div className="paybills-images">
+              <img src={image.img} alt={image.hText} />
             </div>
-          ) : (
-            <p>Please select a valid dashboard</p>
-          )}
-        </div>
-      ))}
+            <div className="paybills-texts">
+              <h4>{image.hText}</h4>
+              <p>{image.pText}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

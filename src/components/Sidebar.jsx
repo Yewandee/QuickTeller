@@ -5,64 +5,44 @@ import { ThreeSixty } from "@mui/icons-material";
 import { MoreHoriz } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
-const Sidebar = ({ showDashboard }) => {
+const Sidebar = () => {
   return (
     <nav className="sidebar">
       <div className="sidebar__icon">
-        <span className="active" onClick={() => showDashboard("Card")}>
-          <Home />
-          <p>Dashboard</p>
+        <Link to="/" className="links">
+          <span className="active">
+            <Home />
+            <p>Dashboard</p>
+          </span>
+        </Link>
+
+        <span>
+          <Link to="/transfer-money" className="links">
+            <People />
+            <p>Send/receive money</p>
+          </Link>
         </span>
 
-        <span onClick={() => showDashboard("transfer-money")}>
-          <People />
-          <p>Send/receive money</p>
-        </span>
+        <Link to="/buy-airtime" className="links">
+          <span>
+            <PhoneAndroid />
+            <p>buy airtime &amp; mobile data</p>
+          </span>
+        </Link>
 
-        <span onClick={() => showDashboard("BuyAirtimeData")}>
-          <PhoneAndroid />
-          <p>buy airtime &amp; mobile data</p>
-        </span>
+        <Link to="/paybills" className="links">
+          <span>
+            <ThreeSixty />
+            <p>pay bills</p>
+          </span>
+        </Link>
 
-        <span onClick={() => showDashboard("PayBills")}>
-          <ThreeSixty />
-          <p>pay bills</p>
-        </span>
         <span>
           <MoreHoriz />
           <p>more</p>
         </span>
       </div>
     </nav>
-
-    /* <div className="dropdown">
-            <button
-              className="btn btn-light dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img src={nigeriaIcon} alt="Nigeria Icon" />
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li>
-                <a className="dropdown-item" href="#">
-                  <img src={nigeriaIcon} alt="Nigeria Icon" /> Nigeria
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <img src={nigeriaIcon} alt="Nigeria Icon" /> Kenya
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  <img src={nigeriaIcon} alt="Nigeria Icon" /> Gambia
-                </a>
-              </li>
-            </ul>
-          </div> */
   );
 };
 

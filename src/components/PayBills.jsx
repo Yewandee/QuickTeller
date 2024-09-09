@@ -1,5 +1,6 @@
 import React from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Link } from "react-router-dom";
 
 import "../styles/PayBills.css";
 
@@ -8,26 +9,26 @@ import "../styles/PayBills.css";
 const PayBillsData = [
   {
     label: "Aid Grants and Donations",
-    dashBoardData: "aid-grants-and-donations",
+    link: "/paybills/aid-grants-and-donations",
   },
-  { label: "Airtime and Data", dashBoardData: "airtime-and-data" },
-  { label: "Airtime Top-up", dashBoardData: "airtime-top-up" },
-  { label: "Associations and Societies", dashBoardData: "associations" },
-  { label: "Betting, Lottery and Gaming", dashBoardData: "betting"},
-  { label: "Cable TV", dashBoardData: "cable-tv" },
-  { label: "Credit and Loans", dashBoardData: "credit-loans"},
+  { label: "Airtime and Data", link: "/paybills/airtime-and-data" },
+  { label: "Airtime Top-up", link: "/paybills/airtime-top-up" },
+  { label: "Associations and Societies", link: "/paybills/associations" },
+  { label: "Betting, Lottery and Gaming", link: "/paybills/betting" },
+  { label: "Cable TV", link: "/paybills/cable-tv" },
+  { label: "Credit and Loans", link: "/paybills/credit-loans" },
 ];
 
-const PayBills = ({ showDashboard }) => {
+const PayBills = () => {
   return (
     <section className="Pay-Bills">
       <div className="">
         <div className="col-md-4 Paybills-sec">
           {PayBillsData.map((paybills, index) => (
             <div key={index}>
-              <button onClick={() => showDashboard(paybills.dashBoardData)}>
-                {paybills.label}
-              </button>
+              <Link to={paybills.link}>
+                <button>{paybills.label}</button>
+              </Link>
               <i>
                 <ChevronRightIcon />
               </i>

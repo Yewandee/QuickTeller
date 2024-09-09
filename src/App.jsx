@@ -1,6 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -22,24 +23,45 @@ function App() {
   };
 
   return (
+    // <div className="app">
+    //   <Header />
+    //   <Sidebar showDashboard={showDashboard} />
+    //   <main className="app__content" showDashboard={showDashboard}>
+    //     {active === "Card" && <Card />}
+    //     {active === "BuyAirtimeData" && <BuyAirtimeData />}
+    //     {active === "transfer-money" && (
+    //       <SendReceive showDashboard={showDashboard} />
+    //     )}
+    //     {active === "account" && <TransferAccount />}
+    //     {active === "eCash" && <TransferEcash />}
+    //     {active === "transferlink" && <TransferLink />}
+
+    //     {active === "PayBills" && <PayBills showDashboard={showDashboard} />}
+    //     {active === "PayBillsComponent" && <PayBillsComponent showDashboard={showDashboard} />}
+    //   </main>
+    //   <div className="footer">OK</div>
+     
+    // </div>
+
+    <Router>
     <div className="app">
       <Header />
-      <Sidebar showDashboard={showDashboard} />
-      <main className="app__content" showDashboard={showDashboard}>
-        {active === "Card" && <Card />}
-        {active === "BuyAirtimeData" && <BuyAirtimeData />}
-        {active === "transfer-money" && (
-          <SendReceive showDashboard={showDashboard} />
-        )}
-        {active === "account" && <TransferAccount />}
-        {active === "eCash" && <TransferEcash />}
-        {active === "transferlink" && <TransferLink />}
-
-        {active === "PayBills" && <PayBills showDashboard={showDashboard} />}
-        {active === "PayBillsComponent" && <PayBillsComponent showDashboard={showDashboard} />}
+      <Sidebar />
+      <main className="app__content">
+        <Routes>
+          <Route path="/" element={<Card />} />
+          <Route path="/transfer-money" element={<SendReceive />} />
+          <Route path="/buy-airtime" element={<BuyAirtimeData />} />
+            <Route path="/account" element={<TransferAccount />} />
+            <Route path="/ecash" element={<TransferEcash />} />
+            <Route path="/transferlink" element={<TransferLink />} />
+          <Route path="/paybills" element={<PayBills />} /> 
+            <Route path="/paybills/:dashboard" element={<PayBillsComponent />} />
+        </Routes>
       </main>
       <div className="footer">OK</div>
     </div>
+  </Router>
   );
 }
 
